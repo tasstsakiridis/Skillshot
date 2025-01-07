@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cih4rd6mwgr0h"]
+
+[ext_resource type="Shader" path="res://Shaders/trajectory_shader.gdshader" id="1_ur72j"]
+[ext_resource type="Texture2D" uid="uid://dhe1les0fs6w1" path="res://Assets/Sprites/TrajectoryRepeat.png" id="2_rgfcs"]
+[ext_resource type="Script" path="res://Scripts/trajectory.gd" id="3_guuva"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6fwoj"]
+shader = ExtResource("1_ur72j")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egvm3"]
+
+[node name="trajectory" type="Line2D"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_6fwoj")
+points = PackedVector2Array(0, 0, 50, 10, 200, 100, 500, 2.08165e-12, 560, 136)
+texture = ExtResource("2_rgfcs")
+texture_mode = 1
+script = ExtResource("3_guuva")
+
+[node name="CollisionTest" type="CharacterBody2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionTest"]
+shape = SubResource("RectangleShape2D_egvm3")

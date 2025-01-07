@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfjxmkd0xxumv"]
+
+[ext_resource type="Script" path="res://Scripts/brick.gd" id="1_cnrxe"]
+[ext_resource type="Texture2D" uid="uid://dowisosbke0l8" path="res://Assets/Sprites/Brick.png" id="1_elmka"]
+[ext_resource type="AudioStream" uid="uid://b453t4vkan7j0" path="res://Assets/Sound/hit_sfx.mp3" id="3_cdfok"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxgwo"]
+size = Vector2(16, 64)
+
+[node name="brick" type="AnimatableBody2D" groups=["bricks"]]
+script = ExtResource("1_cnrxe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_elmka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mxgwo")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cdfok")

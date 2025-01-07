@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dryyu5c0d421w"]
+
+[ext_resource type="Script" path="res://Scripts/cannon.gd" id="1_vtiha"]
+[ext_resource type="Texture2D" uid="uid://bl8ridmt1pf6a" path="res://Assets/Sprites/Cannon_128.png" id="2_rw0m6"]
+[ext_resource type="PackedScene" uid="uid://cdleelpekdhxn" path="res://Scenes/projectile.tscn" id="3_cac0y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yib08"]
+radius = 52.1536
+
+[node name="cannon" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_vtiha")
+
+[node name="cannon_img" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="cannon_img"]
+texture = ExtResource("2_rw0m6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_yib08")
+
+[node name="LaunchPoint" type="Node2D" parent="."]
+
+[node name="Projectile" parent="." instance=ExtResource("3_cac0y")]
+visible = false

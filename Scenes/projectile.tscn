@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdleelpekdhxn"]
+
+[ext_resource type="Texture2D" uid="uid://bt8oa8u4kocxs" path="res://Assets/Sprites/Ball.png" id="1_tilrg"]
+[ext_resource type="Script" path="res://Scripts/projectile.gd" id="1_tjxdy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tb2y7"]
+radius = 31.0
+
+[node name="Projectile" type="CharacterBody2D"]
+collision_layer = 2
+motion_mode = 1
+slide_on_ceiling = false
+script = ExtResource("1_tjxdy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tilrg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tb2y7")

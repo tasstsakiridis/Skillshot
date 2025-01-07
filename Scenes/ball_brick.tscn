@@ -1,0 +1,112 @@
+[gd_scene load_steps=9 format=3 uid="uid://bf1v8qumhfejc"]
+
+[ext_resource type="Texture2D" uid="uid://dowisosbke0l8" path="res://Assets/Sprites/Brick.png" id="1_424fu"]
+[ext_resource type="PackedScene" uid="uid://didlkjqq61wp0" path="res://Scenes/small_projectile.tscn" id="2_vvrit"]
+
+[sub_resource type="Curve2D" id="Curve2D_sb28y"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -96, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3u72y"]
+size = Vector2(15, 61)
+
+[sub_resource type="Animation" id="Animation_7w2dw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ball_brick:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_cqa1n"]
+resource_name = "ball_brick_move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_ls5ra"]
+resource_name = "ball_brick_rotate"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ball_brick:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.5708, 3.14159]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xu7oj"]
+_data = {
+"RESET": SubResource("Animation_7w2dw"),
+"ball_brick_move": SubResource("Animation_cqa1n"),
+"ball_brick_rotate": SubResource("Animation_ls5ra")
+}
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_sb28y")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../ball_brick")
+
+[node name="ball_brick" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ball_brick"]
+texture = ExtResource("1_424fu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ball_brick"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_3u72y")
+
+[node name="small_projectile1" parent="ball_brick" instance=ExtResource("2_vvrit")]
+position = Vector2(0, -16)
+
+[node name="small_projectile2" parent="ball_brick" instance=ExtResource("2_vvrit")]
+
+[node name="small_projectile3" parent="ball_brick" instance=ExtResource("2_vvrit")]
+position = Vector2(0, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xu7oj")
+}

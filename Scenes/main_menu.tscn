@@ -1,0 +1,270 @@
+[gd_scene load_steps=19 format=3 uid="uid://bn2nwgl6kp1pr"]
+
+[ext_resource type="Texture2D" uid="uid://d13ou0xvvosbm" path="res://Assets/Sprites/title.png" id="1_1vqpi"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_vfwff"]
+[ext_resource type="Texture2D" uid="uid://c64we8suxg8dh" path="res://Assets/Sprites/label_continue.png" id="2_4uytt"]
+[ext_resource type="Texture2D" uid="uid://cyho1780rhsqc" path="res://Assets/Sprites/sound_off.png" id="3_35hbb"]
+[ext_resource type="Texture2D" uid="uid://dg5vxe3r7cbp0" path="res://Assets/Sprites/label_new_game.png" id="3_pfur1"]
+[ext_resource type="Texture2D" uid="uid://3cppxye25el3" path="res://Assets/Sprites/label_options.png" id="4_xpur5"]
+[ext_resource type="Texture2D" uid="uid://fwbxwtou5w1o" path="res://Assets/Sprites/sound_on.png" id="5_nfubg"]
+[ext_resource type="Texture2D" uid="uid://d2gmjipekxdq3" path="res://Assets/Sprites/music_off.png" id="5_rgad8"]
+[ext_resource type="Texture2D" uid="uid://bcqfws7ofdvng" path="res://Assets/Sprites/music_on.png" id="6_grh1e"]
+[ext_resource type="Texture2D" uid="uid://drmyr2xhtcr3y" path="res://Assets/Sprites/back.png" id="8_150ba"]
+[ext_resource type="AudioStream" uid="uid://b453t4vkan7j0" path="res://Assets/Sound/hit_sfx.mp3" id="11_76k2e"]
+[ext_resource type="AudioStream" uid="uid://cyok4sasvyklx" path="res://Assets/Sound/menu_music.mp3" id="12_a3n8g"]
+
+[sub_resource type="Animation" id="Animation_ab0g4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OptionsMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-600, 2.08165e-12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainMenu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e3itl"]
+resource_name = "main_slide_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-600, 2.08165e-12), Vector2(2.08165e-12, 2.08165e-12)]
+}
+
+[sub_resource type="Animation" id="Animation_a50ti"]
+resource_name = "main_slide_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-600, 2.08165e-12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OptionsMenu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-600, 2.08165e-12), Vector2(2.08165e-12, 2.08165e-12)]
+}
+
+[sub_resource type="Animation" id="Animation_bs52m"]
+resource_name = "settings_slide_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OptionsMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-600, 2.08165e-12), Vector2(2.08165e-12, 2.08165e-12)]
+}
+
+[sub_resource type="Animation" id="Animation_tb7wj"]
+resource_name = "settings_slide_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OptionsMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-600, 2.08165e-12)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainMenu:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-600, 2.08165e-12), Vector2(2.08165e-12, 2.08165e-12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7tf6j"]
+_data = {
+"RESET": SubResource("Animation_ab0g4"),
+"main_slide_in": SubResource("Animation_e3itl"),
+"main_slide_out": SubResource("Animation_a50ti"),
+"settings_slide_in": SubResource("Animation_bs52m"),
+"settings_slide_out": SubResource("Animation_tb7wj")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 597.0
+offset_bottom = 1024.0
+script = ExtResource("1_vfwff")
+soundOnTexture = ExtResource("5_nfubg")
+soundOffTexture = ExtResource("3_35hbb")
+musicOnTexture = ExtResource("6_grh1e")
+musicOffTexture = ExtResource("5_rgad8")
+
+[node name="MainMenu" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 30
+
+[node name="Logo" type="TextureRect" parent="MainMenu/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_1vqpi")
+
+[node name="MenuOptions" type="VBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Continue" type="TextureRect" parent="MainMenu/VBoxContainer/MenuOptions"]
+layout_mode = 2
+texture = ExtResource("2_4uytt")
+stretch_mode = 3
+
+[node name="NewGameButton" type="TextureButton" parent="MainMenu/VBoxContainer/MenuOptions"]
+layout_mode = 2
+texture_normal = ExtResource("3_pfur1")
+stretch_mode = 5
+
+[node name="OptionsButton" type="TextureButton" parent="MainMenu/VBoxContainer/MenuOptions"]
+layout_mode = 2
+texture_normal = ExtResource("4_xpur5")
+stretch_mode = 5
+
+[node name="OptionsMenu" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -600.0
+offset_right = -600.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OptionsMenu"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="OptionsMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 30
+
+[node name="Logo" type="TextureRect" parent="OptionsMenu/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_1vqpi")
+
+[node name="MenuOptions" type="VBoxContainer" parent="OptionsMenu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="OptionsTitle" type="TextureRect" parent="OptionsMenu/VBoxContainer/MenuOptions"]
+layout_mode = 2
+texture = ExtResource("4_xpur5")
+stretch_mode = 3
+
+[node name="SoundToggle" type="TextureButton" parent="OptionsMenu/VBoxContainer/MenuOptions"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_nfubg")
+
+[node name="MusicToggle" type="TextureButton" parent="OptionsMenu/VBoxContainer/MenuOptions"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("6_grh1e")
+
+[node name="BackButton" type="TextureButton" parent="OptionsMenu/VBoxContainer/MenuOptions"]
+layout_mode = 2
+texture_normal = ExtResource("8_150ba")
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7tf6j")
+}
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_76k2e")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_a3n8g")
+autoplay = true
+
+[connection signal="pressed" from="MainMenu/VBoxContainer/MenuOptions/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/MenuOptions/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="OptionsMenu/VBoxContainer/MenuOptions/SoundToggle" to="." method="_on_sound_toggle_pressed"]
+[connection signal="pressed" from="OptionsMenu/VBoxContainer/MenuOptions/MusicToggle" to="." method="_on_music_toggle_pressed"]
+[connection signal="pressed" from="OptionsMenu/VBoxContainer/MenuOptions/BackButton" to="." method="_on_back_button_pressed"]

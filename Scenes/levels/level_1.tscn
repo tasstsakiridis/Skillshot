@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://btlatbmhjmcd2"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_vun3q"]
+
+[node name="level1" instance=ExtResource("1_vun3q")]
+
+[node name="brick" parent="grid/bricks" index="0"]
+position = Vector2(264, 352)
