@@ -71,3 +71,9 @@ func set_music_texture():
 	else:
 		musicToggle.texture_normal = musicOffTexture
 		musicPlayer.stop()
+
+
+func _on_continue_pressed() -> void:
+	GameDataManager.load_data()
+	var currentLevel = str(GameManager.get_current_level())
+	get_tree().change_scene_to_file("res://Scenes/levels/level_"+currentLevel+".tscn")

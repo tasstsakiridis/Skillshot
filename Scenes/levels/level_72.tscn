@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://rb6oe6qjunw"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_bdglx"]
+[ext_resource type="PackedScene" uid="uid://chk1x6swdip4p" path="res://Scenes/vertical_moving_brick.tscn" id="2_3404j"]
+[ext_resource type="PackedScene" uid="uid://blh6idy8oxcem" path="res://Scenes/barrier.tscn" id="3_dup0q"]
+
+[sub_resource type="Curve2D" id="Curve2D_ikhty"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, -104, 0, 0, 0, 0, -1, 228, 0, 0, 0, 0, 2, -104)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_eneun"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -99, 0, 0, 0, 0, 1, -422, 0, 0, 0, 0, 1, -98)
+}
+point_count = 3
+
+[node name="gameWindow" instance=ExtResource("1_bdglx")]
+
+[node name="vertical_moving_brick" parent="grid/bricks" index="0" instance=ExtResource("2_3404j")]
+position = Vector2(70, 310)
+curve = SubResource("Curve2D_ikhty")
+is_hitable = true
+
+[node name="vertical_moving_brick2" parent="grid/bricks" index="1" instance=ExtResource("2_3404j")]
+position = Vector2(470, 610)
+curve = SubResource("Curve2D_eneun")
+is_hitable = true
+
+[node name="barriers" type="Node" parent="grid" index="5"]
+
+[node name="barrier" parent="grid/barriers" index="0" instance=ExtResource("3_dup0q")]
+position = Vector2(168, 400)
+
+[node name="barrier2" parent="grid/barriers" index="1" instance=ExtResource("3_dup0q")]
+position = Vector2(168, 460)
+
+[node name="barrier3" parent="grid/barriers" index="2" instance=ExtResource("3_dup0q")]
+position = Vector2(168, 520)
+
+[node name="barrier4" parent="grid/barriers" index="3" instance=ExtResource("3_dup0q")]
+position = Vector2(168, 580)
+
+[node name="barrier5" parent="grid/barriers" index="4" instance=ExtResource("3_dup0q")]
+position = Vector2(168, 640)
+
+[node name="barrier6" parent="grid/barriers" index="5" instance=ExtResource("3_dup0q")]
+position = Vector2(168, 700)
+
+[node name="barrier7" parent="grid/barriers" index="6" instance=ExtResource("3_dup0q")]
+position = Vector2(399, 400)
+
+[node name="barrier8" parent="grid/barriers" index="7" instance=ExtResource("3_dup0q")]
+position = Vector2(399, 460)
+
+[node name="barrier9" parent="grid/barriers" index="8" instance=ExtResource("3_dup0q")]
+position = Vector2(399, 520)
+
+[node name="barrier10" parent="grid/barriers" index="9" instance=ExtResource("3_dup0q")]
+position = Vector2(399, 580)
+
+[node name="barrier11" parent="grid/barriers" index="10" instance=ExtResource("3_dup0q")]
+position = Vector2(399, 640)
+
+[node name="barrier12" parent="grid/barriers" index="11" instance=ExtResource("3_dup0q")]
+position = Vector2(399, 700)
+
+[node name="cannon" parent="." index="3"]
+position = Vector2(285, 950)

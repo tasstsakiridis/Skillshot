@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://coiwjjcp01bbj"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_k2o7q"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="2_ficct"]
+[ext_resource type="PackedScene" uid="uid://blh6idy8oxcem" path="res://Scenes/barrier.tscn" id="3_3ecg7"]
+
+[node name="gameWindow" instance=ExtResource("1_k2o7q")]
+
+[node name="brick2" parent="grid/bricks" index="0" instance=ExtResource("2_ficct")]
+position = Vector2(425, 160)
+
+[node name="brick3" parent="grid/bricks" index="1" instance=ExtResource("2_ficct")]
+position = Vector2(425, 410)
+
+[node name="brick4" parent="grid/bricks" index="2" instance=ExtResource("2_ficct")]
+position = Vector2(425, 640)
+
+[node name="brick5" parent="grid/bricks" index="3" instance=ExtResource("2_ficct")]
+position = Vector2(480, 285)
+
+[node name="brick6" parent="grid/bricks" index="4" instance=ExtResource("2_ficct")]
+position = Vector2(480, 535)
+
+[node name="brick7" parent="grid/bricks" index="5" instance=ExtResource("2_ficct")]
+position = Vector2(252, 410)
+
+[node name="barriers" type="Node" parent="grid" index="5"]
+
+[node name="barrier" parent="grid/barriers" index="0" instance=ExtResource("3_3ecg7")]
+position = Vector2(328, 325)
+
+[node name="barrier2" parent="grid/barriers" index="1" instance=ExtResource("3_3ecg7")]
+position = Vector2(328, 386)
+
+[node name="barrier3" parent="grid/barriers" index="2" instance=ExtResource("3_3ecg7")]
+position = Vector2(328, 447)
+
+[node name="barrier4" parent="grid/barriers" index="3" instance=ExtResource("3_3ecg7")]
+position = Vector2(328, 508)
+
+[node name="barrier5" parent="grid/barriers" index="4" instance=ExtResource("3_3ecg7")]
+position = Vector2(328, 569)
+
+[node name="barrier6" parent="grid/barriers" index="5" instance=ExtResource("3_3ecg7")]
+position = Vector2(328, 630)
+
+[node name="barrier7" parent="grid/barriers" index="6" instance=ExtResource("3_3ecg7")]
+position = Vector2(328, 691)
+
+[node name="barrier8" parent="grid/barriers" index="7" instance=ExtResource("3_3ecg7")]
+position = Vector2(328, 752)
+
+[node name="barrier9" parent="grid/barriers" index="8" instance=ExtResource("3_3ecg7")]
+position = Vector2(328, 813)
+
+[node name="barrier10" parent="grid/barriers" index="9" instance=ExtResource("3_3ecg7")]
+position = Vector2(328, 874)
+
+[node name="cannon" parent="." index="3"]
+position = Vector2(70, 600)

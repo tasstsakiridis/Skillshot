@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://ql12bhwqd406"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_ryojo"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="2_g0o5c"]
+[ext_resource type="PackedScene" uid="uid://c6okegvxl0rjl" path="res://Scenes/rotating_brick.tscn" id="3_6oh5q"]
+
+[node name="gameWindow" instance=ExtResource("1_ryojo")]
+
+[node name="brick2" parent="grid/bricks" index="0" instance=ExtResource("2_g0o5c")]
+position = Vector2(440, 120)
+rotation = 1.5708
+
+[node name="brick3" parent="grid/bricks" index="1" instance=ExtResource("2_g0o5c")]
+position = Vector2(109, 120)
+rotation = 1.5708
+
+[node name="platforms" type="Node" parent="grid" index="5"]
+
+[node name="rotating_brick" parent="grid/platforms" index="0" instance=ExtResource("3_6oh5q")]
+position = Vector2(132, 589)
+
+[node name="rotating_brick2" parent="grid/platforms" index="1" instance=ExtResource("3_6oh5q")]
+position = Vector2(452, 589)
+
+[node name="rotating_brick3" parent="grid/platforms" index="2" instance=ExtResource("3_6oh5q")]
+position = Vector2(282, 389)

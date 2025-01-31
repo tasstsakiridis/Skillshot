@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfkndomvlwn0c"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_i1bcf"]
+[ext_resource type="PackedScene" uid="uid://blh6idy8oxcem" path="res://Scenes/barrier.tscn" id="2_f6mwe"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="2_n64re"]
+[ext_resource type="PackedScene" uid="uid://v10uk0464o5e" path="res://Scenes/horizontal_moving_brick.tscn" id="3_fbfaq"]
+
+[sub_resource type="Curve2D" id="Curve2D_tq7f3"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 35, 0, 0, 0, 0, -2, -146, 0, 0, 0, 0, -1, 36)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_d31tj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 33, 0, 0, 0, 0, -2, -147, 0, 0, 0, 0, -1, 33)
+}
+point_count = 3
+
+[node name="gameWindow" instance=ExtResource("1_i1bcf")]
+
+[node name="brick" parent="grid/bricks" index="0" instance=ExtResource("2_n64re")]
+position = Vector2(271, 147)
+rotation = 1.5708
+
+[node name="barriers" type="Node" parent="grid" index="5"]
+
+[node name="barrier" parent="grid/barriers" index="0" instance=ExtResource("2_f6mwe")]
+position = Vector2(213, 339)
+
+[node name="barrier2" parent="grid/barriers" index="1" instance=ExtResource("2_f6mwe")]
+position = Vector2(353, 339)
+
+[node name="barrier3" parent="grid/barriers" index="2" instance=ExtResource("2_f6mwe")]
+position = Vector2(252, 376)
+rotation = 1.5708
+
+[node name="barrier4" parent="grid/barriers" index="3" instance=ExtResource("2_f6mwe")]
+position = Vector2(315, 376)
+rotation = 1.5708
+
+[node name="platforms" type="Node" parent="grid" index="6"]
+
+[node name="horizontal_moving_brick" parent="grid/platforms" index="0" instance=ExtResource("3_fbfaq")]
+position = Vector2(55, 319)
+rotation = 1.5708
+curve = SubResource("Curve2D_tq7f3")
+
+[node name="horizontal_moving_brick2" parent="grid/platforms" index="1" instance=ExtResource("3_fbfaq")]
+position = Vector2(402, 319)
+rotation = 1.5708
+curve = SubResource("Curve2D_d31tj")

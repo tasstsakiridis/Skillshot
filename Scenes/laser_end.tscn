@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://pljmx7b5fmyt"]
+
+[ext_resource type="Script" path="res://Scripts/laser_end.gd" id="1_0qc4q"]
+[ext_resource type="Texture2D" uid="uid://c8s7xqbogd3o2" path="res://Assets/Sprites/Laser_End.png" id="1_o8k65"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i5tuf"]
+radius = 19.0
+
+[node name="laserend" type="AnimatableBody2D"]
+script = ExtResource("1_0qc4q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_o8k65")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i5tuf")

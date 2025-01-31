@@ -20,12 +20,19 @@ func _physics_process(delta):
 		#print("projectile bounc velocity: " + str(velocity))
 	
 	if collision.get_collider().has_method("take_damage"):
+		velocity = velocity * 1.5
 		collision.get_collider().take_damage()
 		
-	if collision.get_collider().has_meta("is_bottom_wall") && !is_trajectory_projectile:
+	#if collision.get_collider().has_meta("is_bottom_wall") && !is_trajectory_projectile:
+		#velocity = Vector2.ZERO
+		#var tween = get_tree().create_tween()
+		#tween.tween_property(self, "position", Vector2(0, -20), 0.5)
+		#tween.connect("finished", on_reset_position_finished)
+	if !is_trajectory_projectile && GameManager.gameState == Enums.GAME_STATE.Fired && velocity.length() < 100:
 		velocity = Vector2.ZERO
+		$CollisionShape2D.disabled = true
 		var tween = get_tree().create_tween()
-		tween.tween_property(self, "position", Vector2(0, -20), 0.5)
+		tween.tween_property(self, "position", Vector2(0, -20), 1)
 		tween.connect("finished", on_reset_position_finished)
 		
 

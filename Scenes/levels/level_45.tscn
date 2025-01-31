@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://xavdgx1f8a8"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_sd6br"]
+[ext_resource type="PackedScene" uid="uid://blh6idy8oxcem" path="res://Scenes/barrier.tscn" id="2_nc8at"]
+[ext_resource type="PackedScene" uid="uid://v10uk0464o5e" path="res://Scenes/horizontal_moving_brick.tscn" id="3_dv2kq"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="4_prt46"]
+
+[sub_resource type="Curve2D" id="Curve2D_5g26f"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0.999939, -18, 0, 0, 0, 0, 2.00003, 361, 0, 0, 0, 0, 0.999939, -19, 0, 0, 0, 0, 0.999939, -19)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_fhfjx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1.99994, 6, 0, 0, 0, 0, 0, -382, 0, 0, 0, 0, -1.99994, 6)
+}
+point_count = 3
+
+[node name="gameWindow" instance=ExtResource("1_sd6br")]
+
+[node name="barriers" type="Node" parent="grid" index="4"]
+
+[node name="barrier" parent="grid/barriers" index="0" instance=ExtResource("2_nc8at")]
+position = Vector2(420, 311)
+
+[node name="barrier2" parent="grid/barriers" index="1" instance=ExtResource("2_nc8at")]
+position = Vector2(145, 905)
+
+[node name="barrier3" parent="grid/barriers" index="2" instance=ExtResource("2_nc8at")]
+position = Vector2(459, 350)
+rotation = 1.5708
+
+[node name="barrier4" parent="grid/barriers" index="3" instance=ExtResource("2_nc8at")]
+position = Vector2(105, 863)
+rotation = 1.5708
+
+[node name="lasers" type="Node" parent="grid" index="5"]
+
+[node name="platforms" type="Node" parent="grid" index="6"]
+
+[node name="horizontal_moving_brick" parent="grid/platforms" index="0" instance=ExtResource("3_dv2kq")]
+position = Vector2(389, 288)
+rotation = 1.5708
+curve = SubResource("Curve2D_5g26f")
+
+[node name="horizontal_moving_brick2" parent="grid/platforms" index="1" instance=ExtResource("3_dv2kq")]
+position = Vector2(164, 941)
+rotation = 1.5708
+curve = SubResource("Curve2D_fhfjx")
+
+[node name="brick2" parent="grid/bricks" index="0" instance=ExtResource("4_prt46")]
+position = Vector2(83, 739)
+
+[node name="brick3" parent="grid/bricks" index="1" instance=ExtResource("4_prt46")]
+position = Vector2(457, 107)
+
+[node name="cannon" parent="." index="3"]
+position = Vector2(285, 600)

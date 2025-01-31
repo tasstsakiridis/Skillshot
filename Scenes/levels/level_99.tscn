@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2qxw1ks22f13"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_qdj73"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="2_hwllb"]
+
+[node name="gameWindow" instance=ExtResource("1_qdj73")]
+
+[node name="brick" parent="grid/bricks" index="0" instance=ExtResource("2_hwllb")]
+position = Vector2(275, 95)
+pulse = true
+
+[node name="brick2" parent="grid/bricks" index="1" instance=ExtResource("2_hwllb")]
+position = Vector2(170, 200)
+pulse = true
+pulse_time = 2.0
+
+[node name="brick3" parent="grid/bricks" index="2" instance=ExtResource("2_hwllb")]
+position = Vector2(390, 200)
+pulse = true
+wait_time = 2.0
+
+[node name="brick4" parent="grid/bricks" index="3" instance=ExtResource("2_hwllb")]
+position = Vector2(170, 380)
+pulse = true
+pulse_time = 2.5
+wait_time = 2.0
+
+[node name="brick5" parent="grid/bricks" index="4" instance=ExtResource("2_hwllb")]
+position = Vector2(390, 380)
+pulse = true
+pulse_time = 1.5
+wait_time = 1.5

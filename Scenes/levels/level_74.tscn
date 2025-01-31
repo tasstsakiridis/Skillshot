@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://dflymu8tv0b2b"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_a8dy6"]
+[ext_resource type="PackedScene" uid="uid://v10uk0464o5e" path="res://Scenes/horizontal_moving_brick.tscn" id="2_suqpk"]
+
+[sub_resource type="Curve2D" id="Curve2D_twhj5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1.41418, 1.41423, 0, 0, 0, 0, 0.707092, 210.011, 0, 0, 0, 0, 2.12128, 0.707123)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_lroar"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1.52588e-05, 3.05176e-05, 0, 0, 0, 0, -1.4142, -241.831, 0, 0, 0, 0, 0.707123, 0.707153)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_hsnld"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1.41418, 0, 0, 0, 0, 0, -3.05176e-05, -275.772, 0, 0, 0, 0, 2.12131, 0.707092)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_4nbrl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1.41418, 1.41418, 0, 0, 0, 0, 2.12134, 270.822, 0, 0, 0, 0, 2.12128, 0.707092)
+}
+point_count = 3
+
+[node name="gameWindow" instance=ExtResource("1_a8dy6")]
+
+[node name="horizontal_moving_brick" parent="grid/bricks" index="0" instance=ExtResource("2_suqpk")]
+position = Vector2(201, 79)
+rotation = 0.785398
+curve = SubResource("Curve2D_twhj5")
+is_hitable = true
+
+[node name="horizontal_moving_brick2" parent="grid/bricks" index="1" instance=ExtResource("2_suqpk")]
+position = Vector2(332, 65)
+rotation = 2.35619
+curve = SubResource("Curve2D_lroar")
+
+[node name="horizontal_moving_brick3" parent="grid/bricks" index="2" instance=ExtResource("2_suqpk")]
+position = Vector2(60, 570)
+rotation = 2.35619
+curve = SubResource("Curve2D_hsnld")
+
+[node name="horizontal_moving_brick4" parent="grid/bricks" index="3" instance=ExtResource("2_suqpk")]
+position = Vector2(495, 573)
+rotation = 0.785398
+curve = SubResource("Curve2D_4nbrl")
+
+[node name="cannon" parent="." index="3"]
+position = Vector2(285, 600)

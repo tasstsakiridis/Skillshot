@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://8uc854e0ii0k"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_4eu2k"]
+[ext_resource type="PackedScene" uid="uid://bmq5i64fjy5ix" path="res://Scenes/laser.tscn" id="2_y1wnq"]
+[ext_resource type="PackedScene" uid="uid://pljmx7b5fmyt" path="res://Scenes/laser_end.tscn" id="3_uwa5u"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="4_5273c"]
+
+[node name="gameWindow" instance=ExtResource("1_4eu2k")]
+
+[node name="lasers" type="Node" parent="grid" index="4"]
+
+[node name="laser" parent="grid/lasers" index="0" instance=ExtResource("2_y1wnq")]
+position = Vector2(275, 602)
+rotation = 1.5708
+scale = Vector2(1, 6.8)
+pulse = true
+pulse_time = 2.0
+wait_time = 3.0
+
+[node name="laserend" parent="grid/lasers" index="1" instance=ExtResource("3_uwa5u")]
+position = Vector2(63, 602)
+
+[node name="laserend2" parent="grid/lasers" index="2" instance=ExtResource("3_uwa5u")]
+position = Vector2(511, 602)
+
+[node name="brick" parent="grid/bricks" index="0" instance=ExtResource("4_5273c")]
+position = Vector2(260, 117)
+rotation = 1.5708

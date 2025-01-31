@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0127mreecapw"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_wioqo"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="2_ym3ng"]
+[ext_resource type="PackedScene" uid="uid://blh6idy8oxcem" path="res://Scenes/barrier.tscn" id="3_ov2c0"]
+[ext_resource type="PackedScene" uid="uid://bmq5i64fjy5ix" path="res://Scenes/laser.tscn" id="4_shfiv"]
+[ext_resource type="PackedScene" uid="uid://pljmx7b5fmyt" path="res://Scenes/laser_end.tscn" id="5_xcf73"]
+
+[node name="gameWindow" instance=ExtResource("1_wioqo")]
+
+[node name="brick" parent="grid/bricks" index="0" instance=ExtResource("2_ym3ng")]
+position = Vector2(81, 52)
+rotation = 1.5708
+pulse = true
+
+[node name="brick2" parent="grid/bricks" index="1" instance=ExtResource("2_ym3ng")]
+position = Vector2(478, 161)
+rotation = 1.5708
+pulse = true
+
+[node name="barriers" type="Node" parent="grid" index="5"]
+
+[node name="barrier" parent="grid/barriers" index="0" instance=ExtResource("3_ov2c0")]
+position = Vector2(171, 320)
+
+[node name="barrier2" parent="grid/barriers" index="1" instance=ExtResource("3_ov2c0")]
+position = Vector2(111, 380)
+
+[node name="barrier3" parent="grid/barriers" index="2" instance=ExtResource("3_ov2c0")]
+position = Vector2(149, 357)
+rotation = 1.5708
+
+[node name="barrier4" parent="grid/barriers" index="3" instance=ExtResource("3_ov2c0")]
+position = Vector2(433, 401)
+
+[node name="barrier5" parent="grid/barriers" index="4" instance=ExtResource("3_ov2c0")]
+position = Vector2(373, 461)
+
+[node name="barrier6" parent="grid/barriers" index="5" instance=ExtResource("3_ov2c0")]
+position = Vector2(411, 438)
+rotation = 1.5708
+
+[node name="lasers" type="Node" parent="grid" index="6"]
+
+[node name="laser" parent="grid/lasers" index="0" instance=ExtResource("4_shfiv")]
+position = Vector2(239, 473)
+rotation = 1.8675
+scale = Vector2(1, 4.17492)
+pulse = true
+pulse_time = 2.0
+
+[node name="laserend" parent="grid/lasers" index="1" instance=ExtResource("5_xcf73")]
+position = Vector2(108, 432)
+
+[node name="laserend2" parent="grid/lasers" index="2" instance=ExtResource("5_xcf73")]
+position = Vector2(371, 512)

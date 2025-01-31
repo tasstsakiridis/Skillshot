@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://dq208gj73nsnq"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_tqc8e"]
+[ext_resource type="PackedScene" uid="uid://v10uk0464o5e" path="res://Scenes/horizontal_moving_brick.tscn" id="2_c8c03"]
+[ext_resource type="PackedScene" uid="uid://blh6idy8oxcem" path="res://Scenes/barrier.tscn" id="3_3dvp6"]
+
+[sub_resource type="Curve2D" id="Curve2D_sg6i0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1.41422, -3.05176e-05, 0, 0, 0, 0, 4.24265, -312.541, 0, 0, 0, 0, 0.707092, 0.707092)
+}
+point_count = 3
+
+[node name="gameWindow" instance=ExtResource("1_tqc8e")]
+
+[node name="horizontal_moving_brick" parent="grid/bricks" index="0" instance=ExtResource("2_c8c03")]
+position = Vector2(49, 297)
+rotation = 0.785398
+curve = SubResource("Curve2D_sg6i0")
+is_hitable = true
+
+[node name="barriers" type="Node" parent="grid" index="5"]
+
+[node name="barrier" parent="grid/barriers" index="0" instance=ExtResource("3_3dvp6")]
+position = Vector2(112, 771)
+
+[node name="barrier2" parent="grid/barriers" index="1" instance=ExtResource("3_3dvp6")]
+position = Vector2(112, 711)
+
+[node name="barrier3" parent="grid/barriers" index="2" instance=ExtResource("3_3dvp6")]
+position = Vector2(112, 651)
+
+[node name="barrier4" parent="grid/barriers" index="3" instance=ExtResource("3_3dvp6")]
+position = Vector2(151, 628)
+rotation = 1.5708
+
+[node name="barrier5" parent="grid/barriers" index="4" instance=ExtResource("3_3dvp6")]
+position = Vector2(211, 508)
+rotation = 1.5708
+
+[node name="barrier6" parent="grid/barriers" index="5" instance=ExtResource("3_3dvp6")]
+position = Vector2(173, 591)
+
+[node name="barrier7" parent="grid/barriers" index="6" instance=ExtResource("3_3dvp6")]
+position = Vector2(173, 531)
+
+[node name="barrier8" parent="grid/barriers" index="7" instance=ExtResource("3_3dvp6")]
+position = Vector2(271, 508)
+rotation = 1.5708
+
+[node name="barrier9" parent="grid/barriers" index="8" instance=ExtResource("3_3dvp6")]
+position = Vector2(331, 508)
+rotation = 1.5708
+
+[node name="barrier10" parent="grid/barriers" index="9" instance=ExtResource("3_3dvp6")]
+position = Vector2(368, 486)
+
+[node name="barrier11" parent="grid/barriers" index="10" instance=ExtResource("3_3dvp6")]
+position = Vector2(368, 426)
+
+[node name="barrier12" parent="grid/barriers" index="11" instance=ExtResource("3_3dvp6")]
+position = Vector2(346, 388)
+rotation = 1.5708
+
+[node name="barrier13" parent="grid/barriers" index="12" instance=ExtResource("3_3dvp6")]
+position = Vector2(308, 366)
+
+[node name="barrier14" parent="grid/barriers" index="13" instance=ExtResource("3_3dvp6")]
+position = Vector2(308, 306)
+
+[node name="cannon" parent="." index="3"]
+position = Vector2(285, 963)

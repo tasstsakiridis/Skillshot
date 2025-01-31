@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://btlatbmhjmcd2"]
+[gd_scene load_steps=4 format=3 uid="uid://btlatbmhjmcd2"]
 
 [ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_vun3q"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="2_xjcsm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tb2y7"]
+radius = 31.0
 
 [node name="level1" instance=ExtResource("1_vun3q")]
 
-[node name="brick" parent="grid/bricks" index="0"]
-position = Vector2(264, 352)
+[node name="brick" parent="grid/bricks" index="0" instance=ExtResource("2_xjcsm")]
+position = Vector2(266, 89)
+rotation = 1.5708
+
+[node name="CollisionShape2D" parent="cannon/TestProjectile" index="1"]
+shape = SubResource("CircleShape2D_tb2y7")

@@ -8,28 +8,20 @@ extends AnimatableBody2D
 @export var move_direction:Enums.MOVE_DIRECTION = Enums.MOVE_DIRECTION.Horizontal
 @export var rotation_direction:Enums.ROTATION_DIRECTION = Enums.ROTATION_DIRECTION.Clockwise
 @export var speed:int = 0
+@export var pulse:bool = false
+@export var pulse_time:float = 1.0
+@export var wait_time:float = 1.0
 
 signal brick_destroyed
 
 @onready var sfxPlayer:AudioStreamPlayer = $SFXPlayer
 
-#func _ready():
-	#if is_moving:
-		#var force:Vector2 = Vector2.ZERO
-		#var sp = 100 if speed == 0 else speed
-		#if move_direction == MOVE_DIRECTION.Horizontal:
-			#force = Vector2(sp, 0)
-		#else: 
-			#force = Vector2(0, sp)
-#
-		##apply_central_force(force)
-		#velocity = force * speed
-		#move_and_slide()
-			#
-	#if is_rotating:
-		#var torque = 1000
-		#add_constant_torque(rotation_direction * torque)
-			
+func _ready():
+	$waitTimer.wait_time = wait_time
+	
+	if pulse:
+		$Timer.wait_time = pulse_time
+		$Timer.start(pulse_time)
 		
 func take_damage() -> void:
 	if GameManager.soundOn():
@@ -43,3 +35,18 @@ func take_damage() -> void:
 		
 func _on_body_entered(body):
 	pass
+
+func disable_collision():	
+	$CollisionShape2D.disabled = true
+	$WaitTimer.start(pulse_time)	
+	
+func enable_collision():
+	$Timer.start(pulse_time)	
+
+
+func _on_timer_timeout() -> void:
+	$AnimationPlayer.play("pulse_out")
+
+func _on_wait_timer_timeout() -> void:
+	$CollisionShape2D.disabled = false
+	$AnimationPlayer.play("pulse")

@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvwqrs1sdsg7o"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_71xrf"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="2_vky8a"]
+[ext_resource type="PackedScene" uid="uid://v10uk0464o5e" path="res://Scenes/horizontal_moving_brick.tscn" id="3_pom5e"]
+
+[sub_resource type="Curve2D" id="Curve2D_xyfn6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 50, 0, 0, 0, 0, -3.05176e-05, -457, 0, 0, 0, 0, 0, 51)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_xgyqg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, -36, 0, 0, 0, 0, 1, -200, 0, 0, 0, 0, 3, 301, 0, 0, 0, 0, 1, -35)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_7fgpl"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2, -37, 0, 0, 0, 0, 3, -227, 0, 0, 0, 0, -1, 269, 0, 0, 0, 0, 0, -35)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_ok17e"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3, -34, 0, 0, 0, 0, 1.99896, -290, 0, 0, 0, 0, 1.00073, 205, 0, 0, 0, 0, 3, -34)
+}
+point_count = 4
+
+[node name="gameWindow" instance=ExtResource("1_71xrf")]
+
+[node name="brick" parent="grid/bricks" index="0"]
+position = Vector2(100, 175)
+
+[node name="brick2" parent="grid/bricks" index="1" instance=ExtResource("2_vky8a")]
+position = Vector2(223, 175)
+rotation = 1.5708
+
+[node name="brick3" parent="grid/bricks" index="2" instance=ExtResource("2_vky8a")]
+position = Vector2(341, 175)
+rotation = 1.5708
+
+[node name="brick4" parent="grid/bricks" index="3" instance=ExtResource("2_vky8a")]
+position = Vector2(456, 175)
+rotation = 1.5708
+
+[node name="horizontal_moving_brick" parent="grid/bricks" index="4" instance=ExtResource("3_pom5e")]
+position = Vector2(65, 270)
+rotation = 1.5708
+curve = SubResource("Curve2D_xyfn6")
+
+[node name="horizontal_moving_brick2" parent="grid/bricks" index="5" instance=ExtResource("3_pom5e")]
+position = Vector2(322, 550)
+rotation = 1.5708
+curve = SubResource("Curve2D_xgyqg")
+
+[node name="horizontal_moving_brick3" parent="grid/bricks" index="6" instance=ExtResource("3_pom5e")]
+position = Vector2(290, 445)
+rotation = 1.5708
+curve = SubResource("Curve2D_7fgpl")
+
+[node name="horizontal_moving_brick4" parent="grid/bricks" index="7" instance=ExtResource("3_pom5e")]
+position = Vector2(223, 360)
+rotation = 1.5708
+curve = SubResource("Curve2D_ok17e")

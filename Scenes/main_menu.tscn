@@ -181,9 +181,9 @@ size_flags_vertical = 3
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Continue" type="TextureRect" parent="MainMenu/VBoxContainer/MenuOptions"]
+[node name="Continue" type="TextureButton" parent="MainMenu/VBoxContainer/MenuOptions"]
 layout_mode = 2
-texture = ExtResource("2_4uytt")
+texture_normal = ExtResource("2_4uytt")
 stretch_mode = 3
 
 [node name="NewGameButton" type="TextureButton" parent="MainMenu/VBoxContainer/MenuOptions"]
@@ -263,6 +263,7 @@ stream = ExtResource("11_76k2e")
 stream = ExtResource("12_a3n8g")
 autoplay = true
 
+[connection signal="pressed" from="MainMenu/VBoxContainer/MenuOptions/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/MenuOptions/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/MenuOptions/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="OptionsMenu/VBoxContainer/MenuOptions/SoundToggle" to="." method="_on_sound_toggle_pressed"]

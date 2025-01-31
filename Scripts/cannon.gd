@@ -56,6 +56,8 @@ func _unhandled_input(event):
 		do_attack()
 		
 func do_attack() -> void:
+	GameManager.gameState = Enums.GAME_STATE.Fired
+	
 	TEST_PROJECTILE.get_node("CollisionShape2D").disabled = true
 	TEST_PROJECTILE.visible = false
 	

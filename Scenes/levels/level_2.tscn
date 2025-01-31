@@ -5,8 +5,9 @@
 
 [node name="level_2" instance=ExtResource("1_w8iux")]
 
-[node name="brick" parent="grid/bricks" index="0"]
-position = Vector2(264, 352)
+[node name="brick2" parent="grid/bricks" index="0" instance=ExtResource("2_tl4wl")]
+position = Vector2(350, 200)
 
-[node name="brick2" parent="grid/bricks" index="1" instance=ExtResource("2_tl4wl")]
-position = Vector2(352, 448)
+[node name="brick3" parent="grid/bricks" index="1" instance=ExtResource("2_tl4wl")]
+position = Vector2(270, 137)
+rotation = 1.5708

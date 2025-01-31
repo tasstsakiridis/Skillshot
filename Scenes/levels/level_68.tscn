@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy4pw3rhcrqjt"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_qkf4k"]
+[ext_resource type="PackedScene" uid="uid://v10uk0464o5e" path="res://Scenes/horizontal_moving_brick.tscn" id="2_440m2"]
+[ext_resource type="PackedScene" uid="uid://blh6idy8oxcem" path="res://Scenes/barrier.tscn" id="3_q5jaa"]
+
+[sub_resource type="Curve2D" id="Curve2D_vye0r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 47, 0, 0, 0, 0, 0.999969, -449, 0, 0, 0, 0, 1, 47)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_ormvg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -2, 0, 0, 0, 0, 0, -0.999969, 478, 0, 0, 0, 0, -1, -1.99997)
+}
+point_count = 3
+
+[node name="gameWindow" instance=ExtResource("1_qkf4k")]
+
+[node name="horizontal_moving_brick" parent="grid/bricks" index="0" instance=ExtResource("2_440m2")]
+position = Vector2(78, 92)
+rotation = 1.5708
+curve = SubResource("Curve2D_vye0r")
+is_hitable = true
+
+[node name="horizontal_moving_brick2" parent="grid/bricks" index="1" instance=ExtResource("2_440m2")]
+position = Vector2(499, 323)
+rotation = 1.5708
+curve = SubResource("Curve2D_ormvg")
+is_hitable = true
+
+[node name="barriers" type="Node" parent="grid" index="5"]
+
+[node name="barrier" parent="grid/barriers" index="0" instance=ExtResource("3_q5jaa")]
+position = Vector2(284, 368)
+
+[node name="barrier2" parent="grid/barriers" index="1" instance=ExtResource("3_q5jaa")]
+position = Vector2(284, 430)
+
+[node name="barrier3" parent="grid/barriers" index="2" instance=ExtResource("3_q5jaa")]
+position = Vector2(284, 598)
+
+[node name="barrier4" parent="grid/barriers" index="3" instance=ExtResource("3_q5jaa")]
+position = Vector2(284, 660)

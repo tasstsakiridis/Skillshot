@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b836em3snpk6"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_r3iq5"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="2_nb5vn"]
+[ext_resource type="PackedScene" uid="uid://v10uk0464o5e" path="res://Scenes/horizontal_moving_brick.tscn" id="2_yvl0b"]
+
+[sub_resource type="Curve2D" id="Curve2D_2126q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 43, 0, 0, 0, 0, 2, -449, 0, 0, 0, 0, 0.00012207, 42)
+}
+point_count = 3
+
+[node name="gameWindow" instance=ExtResource("1_r3iq5")]
+
+[node name="brick" parent="grid/bricks" index="0" instance=ExtResource("2_nb5vn")]
+position = Vector2(128, 147)
+rotation = 1.5708
+
+[node name="platforms" type="Node" parent="grid" index="5"]
+
+[node name="horizontal_moving_brick" parent="grid/platforms" index="0" instance=ExtResource("2_yvl0b")]
+position = Vector2(68, 577)
+rotation = 1.5708
+curve = SubResource("Curve2D_2126q")

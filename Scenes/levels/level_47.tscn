@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://6f0s7nknejdj"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_6f6n0"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="2_5jedh"]
+[ext_resource type="PackedScene" uid="uid://v10uk0464o5e" path="res://Scenes/horizontal_moving_brick.tscn" id="2_qeols"]
+[ext_resource type="PackedScene" uid="uid://chk1x6swdip4p" path="res://Scenes/vertical_moving_brick.tscn" id="3_djaqi"]
+
+[sub_resource type="Curve2D" id="Curve2D_bp1am"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2, 35, 0, 0, 0, 0, 0.999969, -281, 0, 0, 0, 0, 2, 35)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_ui5s2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, -137, 0, 0, 0, 0, 0, 133, 0, 0, 0, 0, 0, -137)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_eqwoy"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, -36, 0, 0, 0, 0, 1, 280, 0, 0, 0, 0, 0, -36)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_67kkd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, -67, 0, 0, 0, 0, -1, -347, 0, 0, 0, 0, 0, -67)
+}
+point_count = 3
+
+[node name="gameWindow" instance=ExtResource("1_6f6n0")]
+
+[node name="brick" parent="grid/bricks" index="0" instance=ExtResource("2_5jedh")]
+position = Vector2(249, 337)
+rotation = 1.5708
+
+[node name="platforms" type="Node" parent="grid" index="5"]
+
+[node name="horizontal_moving_brick" parent="grid/platforms" index="0" instance=ExtResource("2_qeols")]
+position = Vector2(137, 389)
+rotation = 1.5708
+curve = SubResource("Curve2D_bp1am")
+
+[node name="vertical_moving_brick" parent="grid/platforms" index="1" instance=ExtResource("3_djaqi")]
+position = Vector2(422, 529)
+curve = SubResource("Curve2D_ui5s2")
+
+[node name="horizontal_moving_brick2" parent="grid/platforms" index="2" instance=ExtResource("2_qeols")]
+position = Vector2(385, 669)
+rotation = 1.5708
+curve = SubResource("Curve2D_eqwoy")
+
+[node name="vertical_moving_brick2" parent="grid/platforms" index="3" instance=ExtResource("3_djaqi")]
+position = Vector2(97, 739)
+curve = SubResource("Curve2D_67kkd")
+
+[node name="cannon" parent="." index="3"]
+position = Vector2(481, 952)

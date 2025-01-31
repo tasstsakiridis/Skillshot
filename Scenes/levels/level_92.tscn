@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://1i2wm048b2vl"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_l6b0q"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="2_p2651"]
+[ext_resource type="PackedScene" uid="uid://chk1x6swdip4p" path="res://Scenes/vertical_moving_brick.tscn" id="3_pjtr0"]
+[ext_resource type="PackedScene" uid="uid://v10uk0464o5e" path="res://Scenes/horizontal_moving_brick.tscn" id="4_shkv5"]
+
+[sub_resource type="Curve2D" id="Curve2D_q67c7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, -103, 0, 0, 0, 0, 1, -767, 0, 0, 0, 0, 2, -102)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_xx5hx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, -1, 0, 0, 0, 0, 3.05176e-05, 389, 0, 0, 0, 0, 1, -2)
+}
+point_count = 3
+
+[node name="gameWindow" instance=ExtResource("1_l6b0q")]
+
+[node name="brick" parent="grid/bricks" index="0" instance=ExtResource("2_p2651")]
+position = Vector2(359, 775)
+rotation = 0.785398
+pulse = true
+
+[node name="brick2" parent="grid/bricks" index="1" instance=ExtResource("2_p2651")]
+position = Vector2(487, 647)
+rotation = 0.785398
+pulse = true
+pulse_time = 2.0
+
+[node name="vertical_moving_brick" parent="grid/bricks" index="2" instance=ExtResource("3_pjtr0")]
+position = Vector2(65, 826)
+curve = SubResource("Curve2D_q67c7")
+is_hitable = true
+
+[node name="horizontal_moving_brick" parent="grid/bricks" index="3" instance=ExtResource("4_shkv5")]
+position = Vector2(484, 102)
+rotation = 1.5708
+curve = SubResource("Curve2D_xx5hx")
+is_hitable = true
+
+[node name="cannon" parent="." index="3"]
+position = Vector2(433, 900)

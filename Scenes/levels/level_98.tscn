@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://dax4u52d5e0rb"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_25qhe"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="2_7ao1i"]
+[ext_resource type="PackedScene" uid="uid://blh6idy8oxcem" path="res://Scenes/barrier.tscn" id="3_5s20v"]
+[ext_resource type="PackedScene" uid="uid://chk1x6swdip4p" path="res://Scenes/vertical_moving_brick.tscn" id="4_724mw"]
+
+[sub_resource type="Curve2D" id="Curve2D_axd1q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 4, -211, 0, 0, 0, 0, 4, 508, 0, 0, 0, 0, 3, -212)
+}
+point_count = 3
+
+[node name="gameWindow" instance=ExtResource("1_25qhe")]
+
+[node name="brick" parent="grid/bricks" index="0" instance=ExtResource("2_7ao1i")]
+position = Vector2(62, 59)
+rotation = 0.785398
+
+[node name="brick2" parent="grid/bricks" index="1" instance=ExtResource("2_7ao1i")]
+position = Vector2(477, 417)
+rotation = 2.35619
+
+[node name="barriers" type="Node" parent="grid" index="5"]
+
+[node name="barrier" parent="grid/barriers" index="0" instance=ExtResource("3_5s20v")]
+position = Vector2(446, 734)
+
+[node name="barrier2" parent="grid/barriers" index="1" instance=ExtResource("3_5s20v")]
+position = Vector2(424, 695)
+rotation = 1.5708
+
+[node name="barrier3" parent="grid/barriers" index="2" instance=ExtResource("3_5s20v")]
+position = Vector2(401, 658)
+
+[node name="barrier4" parent="grid/barriers" index="3" instance=ExtResource("3_5s20v")]
+position = Vector2(379, 620)
+rotation = 1.5708
+
+[node name="barrier5" parent="grid/barriers" index="4" instance=ExtResource("3_5s20v")]
+position = Vector2(101, 358)
+rotation = 1.5708
+
+[node name="barrier6" parent="grid/barriers" index="5" instance=ExtResource("3_5s20v")]
+position = Vector2(161, 298)
+rotation = 1.5708
+
+[node name="barrier7" parent="grid/barriers" index="6" instance=ExtResource("3_5s20v")]
+position = Vector2(123, 321)
+
+[node name="platforms" type="Node" parent="grid" index="6"]
+
+[node name="vertical_moving_brick" parent="grid/platforms" index="0" instance=ExtResource("4_724mw")]
+position = Vector2(271, 420)
+curve = SubResource("Curve2D_axd1q")
+
+[node name="cannon" parent="." index="3"]
+position = Vector2(455, 914)

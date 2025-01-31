@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0xx1hffr85ru"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_csxn2"]
+[ext_resource type="PackedScene" uid="uid://blh6idy8oxcem" path="res://Scenes/barrier.tscn" id="2_whstr"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="3_cr4gv"]
+
+[node name="gameWindow" instance=ExtResource("1_csxn2")]
+
+[node name="brick2" parent="grid/bricks" index="0" instance=ExtResource("3_cr4gv")]
+position = Vector2(343, 438)
+
+[node name="brick3" parent="grid/bricks" index="1" instance=ExtResource("3_cr4gv")]
+position = Vector2(242, 569)
+
+[node name="brick4" parent="grid/bricks" index="2" instance=ExtResource("3_cr4gv")]
+position = Vector2(132, 686)
+
+[node name="brick5" parent="grid/bricks" index="3" instance=ExtResource("3_cr4gv")]
+position = Vector2(444, 286)
+
+[node name="barriers" type="Node" parent="grid" index="5"]
+
+[node name="barrier7" parent="grid/barriers" index="0" instance=ExtResource("2_whstr")]
+position = Vector2(106, 854)
+
+[node name="barrier8" parent="grid/barriers" index="1" instance=ExtResource("2_whstr")]
+position = Vector2(145, 816)
+rotation = 1.5708
+
+[node name="barrier5" parent="grid/barriers" index="2" instance=ExtResource("2_whstr")]
+position = Vector2(216, 737)
+
+[node name="barrier6" parent="grid/barriers" index="3" instance=ExtResource("2_whstr")]
+position = Vector2(255, 699)
+rotation = 1.5708
+
+[node name="barrier3" parent="grid/barriers" index="4" instance=ExtResource("2_whstr")]
+position = Vector2(317, 606)
+
+[node name="barrier4" parent="grid/barriers" index="5" instance=ExtResource("2_whstr")]
+position = Vector2(356, 568)
+rotation = 1.5708
+
+[node name="barrier" parent="grid/barriers" index="6" instance=ExtResource("2_whstr")]
+position = Vector2(414, 462)
+
+[node name="barrier2" parent="grid/barriers" index="7" instance=ExtResource("2_whstr")]
+position = Vector2(453, 424)
+rotation = 1.5708
+
+[node name="cannon" parent="." index="3"]
+position = Vector2(75, 254)

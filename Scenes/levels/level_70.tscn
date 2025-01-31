@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://cqrdyhfo8lgqx"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_n3gq5"]
+[ext_resource type="PackedScene" uid="uid://v10uk0464o5e" path="res://Scenes/horizontal_moving_brick.tscn" id="2_ea0rw"]
+
+[sub_resource type="Curve2D" id="Curve2D_nsr1p"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -1.00003, -187, 0, 0, 0, 0, -1, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_3roqp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3.05176e-05, 258, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_qhr0k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.99997, -313, 0, 0, 0, 0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_37tyf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0.999969, -210, 0, 0, 0, 0, -1, -1)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_vpyvb"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, -1, 0, 0, 0, 0, 3.05176e-05, 279, 0, 0, 0, 0, -1, -1)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_8dogc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 172, 0, 0, 0, 0, 0, -1)
+}
+point_count = 3
+
+[node name="gameWindow" instance=ExtResource("1_n3gq5")]
+
+[node name="horizontal_moving_brick" parent="grid/bricks" index="0" instance=ExtResource("2_ea0rw")]
+position = Vector2(164, 126)
+rotation = 1.5708
+curve = SubResource("Curve2D_nsr1p")
+is_hitable = true
+
+[node name="horizontal_moving_brick2" parent="grid/bricks" index="1" instance=ExtResource("2_ea0rw")]
+position = Vector2(420, 261)
+rotation = 1.5708
+curve = SubResource("Curve2D_3roqp")
+is_hitable = true
+
+[node name="platforms" type="Node" parent="grid" index="5"]
+
+[node name="horizontal_moving_brick" parent="grid/platforms" index="0" instance=ExtResource("2_ea0rw")]
+position = Vector2(54, 314)
+rotation = 1.5708
+curve = SubResource("Curve2D_qhr0k")
+
+[node name="horizontal_moving_brick2" parent="grid/platforms" index="1" instance=ExtResource("2_ea0rw")]
+position = Vector2(334, 314)
+rotation = 1.5708
+curve = SubResource("Curve2D_37tyf")
+
+[node name="horizontal_moving_brick3" parent="grid/platforms" index="2" instance=ExtResource("2_ea0rw")]
+position = Vector2(516, 450)
+rotation = 1.5708
+curve = SubResource("Curve2D_vpyvb")
+
+[node name="horizontal_moving_brick4" parent="grid/platforms" index="3" instance=ExtResource("2_ea0rw")]
+position = Vector2(204, 450)
+rotation = 1.5708
+curve = SubResource("Curve2D_8dogc")

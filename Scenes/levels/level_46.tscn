@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://2oeyd5wgsvbw"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_4547h"]
+[ext_resource type="PackedScene" uid="uid://blh6idy8oxcem" path="res://Scenes/barrier.tscn" id="2_6tnhx"]
+[ext_resource type="PackedScene" uid="uid://bmq5i64fjy5ix" path="res://Scenes/laser.tscn" id="3_ykvse"]
+[ext_resource type="PackedScene" uid="uid://pljmx7b5fmyt" path="res://Scenes/laser_end.tscn" id="4_t43rq"]
+[ext_resource type="PackedScene" uid="uid://v10uk0464o5e" path="res://Scenes/horizontal_moving_brick.tscn" id="5_87wvv"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="6_uy2tg"]
+
+[sub_resource type="Curve2D" id="Curve2D_4vm4e"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, -56, 0, 0, 0, 0, -2.99997, 423, 0, 0, 0, 0, -1, -57)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_m62rf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, 35, 0, 0, 0, 0, 2, -466, 0, 0, 0, 0, 1, 33)
+}
+point_count = 3
+
+[node name="gameWindow" instance=ExtResource("1_4547h")]
+
+[node name="barriers" type="Node" parent="grid" index="4"]
+
+[node name="barrier" parent="grid/barriers" index="0" instance=ExtResource("2_6tnhx")]
+position = Vector2(196, 375)
+
+[node name="barrier2" parent="grid/barriers" index="1" instance=ExtResource("2_6tnhx")]
+position = Vector2(331, 375)
+
+[node name="barrier3" parent="grid/barriers" index="2" instance=ExtResource("2_6tnhx")]
+position = Vector2(234, 397)
+rotation = 1.5708
+
+[node name="barrier4" parent="grid/barriers" index="3" instance=ExtResource("2_6tnhx")]
+position = Vector2(294, 397)
+rotation = 1.5708
+
+[node name="lasers" type="Node" parent="grid" index="5"]
+
+[node name="laser" parent="grid/lasers" index="0" instance=ExtResource("3_ykvse")]
+position = Vector2(280, 702)
+rotation = 1.5708
+scale = Vector2(1, 6.36)
+pulse = true
+pulse_time = 3.0
+
+[node name="laserend" parent="grid/lasers" index="1" instance=ExtResource("4_t43rq")]
+position = Vector2(71, 701)
+
+[node name="laserend2" parent="grid/lasers" index="2" instance=ExtResource("4_t43rq")]
+position = Vector2(494, 701)
+
+[node name="platforms" type="Node" parent="grid" index="6"]
+
+[node name="horizontal_moving_brick" parent="grid/platforms" index="0" instance=ExtResource("5_87wvv")]
+position = Vector2(455, 495)
+rotation = 1.5708
+curve = SubResource("Curve2D_4vm4e")
+
+[node name="horizontal_moving_brick2" parent="grid/platforms" index="1" instance=ExtResource("5_87wvv")]
+position = Vector2(61, 600)
+rotation = 1.5708
+curve = SubResource("Curve2D_m62rf")
+
+[node name="brick" parent="grid/bricks" index="0" instance=ExtResource("6_uy2tg")]
+position = Vector2(251, 176)
+rotation = 1.5708

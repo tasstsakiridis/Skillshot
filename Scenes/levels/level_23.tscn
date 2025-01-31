@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://crpmc43myo6ga"]
+
+[ext_resource type="PackedScene" uid="uid://cf12wgqse78ku" path="res://Scenes/game_window.tscn" id="1_4k461"]
+[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="2_0sx3i"]
+[ext_resource type="PackedScene" uid="uid://blh6idy8oxcem" path="res://Scenes/barrier.tscn" id="3_ifim8"]
+
+[node name="gameWindow" instance=ExtResource("1_4k461")]
+
+[node name="brick2" parent="grid/bricks" index="0" instance=ExtResource("2_0sx3i")]
+position = Vector2(56, 750)
+
+[node name="brick3" parent="grid/bricks" index="1" instance=ExtResource("2_0sx3i")]
+position = Vector2(479, 66)
+
+[node name="barriers" type="Node" parent="grid" index="5"]
+
+[node name="barrier" parent="grid/barriers" index="0" instance=ExtResource("3_ifim8")]
+position = Vector2(126, 883)
+
+[node name="barrier2" parent="grid/barriers" index="1" instance=ExtResource("3_ifim8")]
+position = Vector2(430, 311)
+
+[node name="barrier3" parent="grid/barriers" index="2" instance=ExtResource("3_ifim8")]
+position = Vector2(470, 348)
+rotation = 1.5708
+
+[node name="barrier4" parent="grid/barriers" index="3" instance=ExtResource("3_ifim8")]
+position = Vector2(89, 845)
+rotation = 1.5708
+
+[node name="cannon" parent="." index="3"]
+position = Vector2(285, 600)

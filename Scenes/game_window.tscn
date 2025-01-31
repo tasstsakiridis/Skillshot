@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cf12wgqse78ku"]
+[gd_scene load_steps=14 format=3 uid="uid://cf12wgqse78ku"]
 
 [ext_resource type="PackedScene" uid="uid://bxfdria0356ru" path="res://Scenes/game_manager.tscn" id="1_7n7lh"]
 [ext_resource type="PackedScene" uid="uid://bnui75o1xt18q" path="res://Scenes/top_ui.tscn" id="1_cqgk0"]
@@ -6,7 +6,6 @@
 [ext_resource type="Shader" path="res://Shaders/trajectory_shader.gdshader" id="6_cehrw"]
 [ext_resource type="Script" path="res://Scripts/projectile.gd" id="6_vxd1s"]
 [ext_resource type="Texture2D" uid="uid://dhe1les0fs6w1" path="res://Assets/Sprites/TrajectoryRepeat.png" id="7_g80g8"]
-[ext_resource type="PackedScene" uid="uid://cfjxmkd0xxumv" path="res://Scenes/brick.tscn" id="12_2wai0"]
 [ext_resource type="PackedScene" uid="uid://dryyu5c0d421w" path="res://Scenes/cannon.tscn" id="12_wuh2k"]
 [ext_resource type="Texture2D" uid="uid://bt8oa8u4kocxs" path="res://Assets/Sprites/Ball.png" id="14_uc0kv"]
 
@@ -27,8 +26,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if get_tree().get_nodes_in_group(\"bricks\").is_empty():
-		print(\"game won\")
-			
 		GameManager.set_game_state(Enums.GAME_STATE.Won)
 		
 		
@@ -105,10 +102,6 @@ shape = SubResource("RectangleShape2D_8j0pw")
 [node name="bricks" type="Node2D" parent="grid"]
 position = Vector2(12, 189)
 
-[node name="brick" parent="grid/bricks" instance=ExtResource("12_2wai0")]
-position = Vector2(248, 173)
-rotation = 1.5708
-
 [node name="cannon" parent="." instance=ExtResource("12_wuh2k")]
 position = Vector2(285, 890)
 collision_layer = 2
@@ -137,3 +130,5 @@ texture = ExtResource("14_uc0kv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cannon/TestProjectile"]
 shape = SubResource("CircleShape2D_tb2y7")
+
+[connection signal="level_changed" from="GameManager" to="topUI" method="_on_game_manager_level_changed"]
