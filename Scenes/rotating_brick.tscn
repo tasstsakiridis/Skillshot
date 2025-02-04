@@ -57,3 +57,5 @@ shape = SubResource("RectangleShape2D_47fhb")
 libraries = {
 "": SubResource("AnimationLibrary_7pofq")
 }
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]

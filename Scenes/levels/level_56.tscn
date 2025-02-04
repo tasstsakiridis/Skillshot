@@ -27,13 +27,16 @@ point_count = 3
 position = Vector2(68, 100)
 rotation = 1.5708
 curve = SubResource("Curve2D_t3woc")
+is_hitable = true
 
 [node name="horizontal_moving_brick2" parent="grid/bricks" index="1" instance=ExtResource("2_ecyqp")]
 position = Vector2(492, 250)
 rotation = 1.5708
 curve = SubResource("Curve2D_oujqa")
+is_hitable = true
 
 [node name="horizontal_moving_brick3" parent="grid/bricks" index="2" instance=ExtResource("2_ecyqp")]
 position = Vector2(54, 400)
 rotation = 1.5708
 curve = SubResource("Curve2D_rn4lc")
+is_hitable = true

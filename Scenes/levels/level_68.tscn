@@ -18,13 +18,13 @@ point_count = 3
 
 [node name="gameWindow" instance=ExtResource("1_qkf4k")]
 
-[node name="horizontal_moving_brick" parent="grid/bricks" index="0" instance=ExtResource("2_440m2")]
+[node name="horizontal_moving_brick" parent="grid/bricks" index="0" groups=["bricks"] instance=ExtResource("2_440m2")]
 position = Vector2(78, 92)
 rotation = 1.5708
 curve = SubResource("Curve2D_vye0r")
 is_hitable = true
 
-[node name="horizontal_moving_brick2" parent="grid/bricks" index="1" instance=ExtResource("2_440m2")]
+[node name="horizontal_moving_brick2" parent="grid/bricks" index="1" groups=["bricks"] instance=ExtResource("2_440m2")]
 position = Vector2(499, 323)
 rotation = 1.5708
 curve = SubResource("Curve2D_ormvg")

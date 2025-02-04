@@ -23,10 +23,12 @@ point_count = 3
 position = Vector2(114, 68)
 rotation = 1.5708
 curve = SubResource("Curve2D_b61hp")
+is_hitable = true
 
 [node name="vertical_moving_brick" parent="grid/bricks" index="1" instance=ExtResource("3_epdf3")]
 position = Vector2(77, 219)
 curve = SubResource("Curve2D_njoy8")
+is_hitable = true
 
 [node name="barriers" type="Node" parent="grid" index="5"]
 

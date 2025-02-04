@@ -11,7 +11,10 @@ extends Path2D
 @onready var path = $PathFollow2D
 @onready var animationPlayer = $AnimationPlayer
 @onready var remoteTransform = $PathFollow2D/RemoteTransform2D
+@onready var brick = $Brick
 @onready var brickSprite = $Brick/BrickSprite
+
+@onready var sfxPlayer:AudioStreamPlayer = $SFXPlayer
 
 const BARRIER_TEXTURE = preload("res://assets/Sprites/Barrier.png")
 
@@ -19,6 +22,10 @@ signal brick_destroyed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	brick.is_barrier = is_barrier
+	brick.is_hitable = is_hitable
+	brick.hit_points = hit_points
+	
 	if is_barrier && BARRIER_TEXTURE != null:
 		brickSprite.texture = BARRIER_TEXTURE
 	
@@ -34,9 +41,6 @@ func _ready():
 func _process(delta):
 	path.progress += speed
 	
-func take_damage() -> void:
-	if is_hitable:
-		hit_points -= 1;
-		if hit_points <= 0:
-			queue_free()
-			brick_destroyed.emit()
+
+func _on_brick_brick_destroyed() -> void:
+	queue_free()

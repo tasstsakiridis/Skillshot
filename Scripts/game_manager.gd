@@ -40,15 +40,14 @@ func get_current_level():
 	return level
 	
 func set_current_level(lvl):
-	level = lvl
+	#level = lvl
+	level = 100
 	
 func get_next_level():
 	level = level + 1
 	print("[gamemanager] level: " + str(level))
 	emit_signal("level_changed", level)
 	GameDataManager.save_data()
-	if level > MAX_LEVELS:
-		get_tree().change_scene_to_file("res://Scenes/game_finished.tscn")
 
 func start_over():
 	print("game manager start over")

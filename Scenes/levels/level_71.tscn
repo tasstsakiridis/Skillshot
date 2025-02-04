@@ -17,17 +17,19 @@ point_count = 3
 
 [node name="gameWindow" instance=ExtResource("1_0r5tj")]
 
-[node name="horizontal_moving_brick" parent="grid/bricks" index="0" instance=ExtResource("2_xqwa5")]
+[node name="horizontal_moving_brick" parent="grid/bricks" index="0" groups=["bricks"] instance=ExtResource("2_xqwa5")]
 position = Vector2(428, 101)
 rotation = 1.5708
 curve = SubResource("Curve2D_sg4ex")
 is_hitable = true
+is_barrier = false
 
-[node name="horizontal_moving_brick2" parent="grid/bricks" index="1" instance=ExtResource("2_xqwa5")]
+[node name="horizontal_moving_brick2" parent="grid/bricks" index="1" groups=["bricks"] instance=ExtResource("2_xqwa5")]
 position = Vector2(50, 730)
 rotation = 1.5708
 curve = SubResource("Curve2D_n8nsx")
 is_hitable = true
+is_barrier = false
 
 [node name="cannon" parent="." index="3"]
 position = Vector2(285, 600)

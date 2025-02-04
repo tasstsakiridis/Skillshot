@@ -30,16 +30,18 @@ rotation = 0.785398
 pulse = true
 pulse_time = 2.0
 
-[node name="vertical_moving_brick" parent="grid/bricks" index="2" instance=ExtResource("3_pjtr0")]
+[node name="vertical_moving_brick" parent="grid/bricks" index="2" groups=["bricks"] instance=ExtResource("3_pjtr0")]
 position = Vector2(65, 826)
 curve = SubResource("Curve2D_q67c7")
 is_hitable = true
+is_barrier = false
 
-[node name="horizontal_moving_brick" parent="grid/bricks" index="3" instance=ExtResource("4_shkv5")]
+[node name="horizontal_moving_brick" parent="grid/bricks" index="3" groups=["bricks"] instance=ExtResource("4_shkv5")]
 position = Vector2(484, 102)
 rotation = 1.5708
 curve = SubResource("Curve2D_xx5hx")
 is_hitable = true
+is_barrier = false
 
 [node name="cannon" parent="." index="3"]
 position = Vector2(433, 900)

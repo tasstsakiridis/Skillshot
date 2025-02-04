@@ -39,6 +39,9 @@ func _input(event):
 	if cannon_fired:
 		return
 		
+	if Input.is_key_pressed(KEY_ENTER):
+		GameManager.set_game_state(Enums.GAME_STATE.Won)
+		
 	if event is InputEventMouseButton:
 		if event.button_index == 1 and event.is_pressed():
 			TEST_PROJECTILE.get_node("CollisionShape2D").disabled = false

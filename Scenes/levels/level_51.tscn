@@ -22,7 +22,7 @@ position = Vector2(154, 197)
 rotation = 1.5708
 
 [node name="barrier4" parent="grid/barriers" index="3" instance=ExtResource("2_52x6e")]
-position = Vector2(274, 302)
+position = Vector2(271, 302)
 rotation = 1.5708
 
 [node name="barrier5" parent="grid/barriers" index="4" instance=ExtResource("2_52x6e")]
@@ -40,80 +40,80 @@ rotation = 1.5708
 position = Vector2(311, 160)
 
 [node name="barrier9" parent="grid/barriers" index="8" instance=ExtResource("2_52x6e")]
-position = Vector2(452, 175)
+position = Vector2(459, 175)
 rotation = 1.5708
 
 [node name="barrier10" parent="grid/barriers" index="9" instance=ExtResource("2_52x6e")]
-position = Vector2(311, 280)
+position = Vector2(308, 280)
 
 [node name="barrier11" parent="grid/barriers" index="10" instance=ExtResource("2_52x6e")]
-position = Vector2(214, 302)
+position = Vector2(211, 302)
 rotation = 1.5708
 
 [node name="barrier12" parent="grid/barriers" index="11" instance=ExtResource("2_52x6e")]
-position = Vector2(176, 325)
+position = Vector2(53, 325)
 
 [node name="barrier13" parent="grid/barriers" index="12" instance=ExtResource("2_52x6e")]
-position = Vector2(139, 347)
+position = Vector2(151, 302)
 rotation = 1.5708
 
 [node name="barrier14" parent="grid/barriers" index="13" instance=ExtResource("2_52x6e")]
-position = Vector2(79, 347)
+position = Vector2(91, 302)
 rotation = 1.5708
 
 [node name="barrier15" parent="grid/barriers" index="14" instance=ExtResource("2_52x6e")]
-position = Vector2(42, 370)
+position = Vector2(53, 384)
 
 [node name="barrier16" parent="grid/barriers" index="15" instance=ExtResource("2_52x6e")]
-position = Vector2(42, 430)
+position = Vector2(53, 444)
 
 [node name="barrier17" parent="grid/barriers" index="16" instance=ExtResource("2_52x6e")]
-position = Vector2(80, 452)
+position = Vector2(91, 466)
 rotation = 1.5708
 
 [node name="barrier18" parent="grid/barriers" index="17" instance=ExtResource("2_52x6e")]
-position = Vector2(140, 452)
+position = Vector2(151, 466)
 rotation = 1.5708
 
 [node name="barrier19" parent="grid/barriers" index="18" instance=ExtResource("2_52x6e")]
-position = Vector2(177, 475)
+position = Vector2(173, 504)
 
 [node name="barrier20" parent="grid/barriers" index="19" instance=ExtResource("2_52x6e")]
-position = Vector2(177, 535)
+position = Vector2(173, 564)
 
 [node name="barrier21" parent="grid/barriers" index="20" instance=ExtResource("2_52x6e")]
-position = Vector2(310, 475)
+position = Vector2(332, 491)
 
 [node name="barrier22" parent="grid/barriers" index="21" instance=ExtResource("2_52x6e")]
-position = Vector2(310, 535)
+position = Vector2(332, 551)
 
 [node name="barrier23" parent="grid/barriers" index="22" instance=ExtResource("2_52x6e")]
-position = Vector2(288, 437)
+position = Vector2(310, 453)
 rotation = 1.5708
 
 [node name="barrier24" parent="grid/barriers" index="23" instance=ExtResource("2_52x6e")]
-position = Vector2(250, 415)
+position = Vector2(272, 431)
 
 [node name="barrier25" parent="grid/barriers" index="24" instance=ExtResource("2_52x6e")]
-position = Vector2(273, 377)
+position = Vector2(295, 393)
 rotation = 1.5708
 
 [node name="barrier26" parent="grid/barriers" index="25" instance=ExtResource("2_52x6e")]
-position = Vector2(333, 377)
+position = Vector2(355, 393)
 rotation = 1.5708
 
 [node name="barrier27" parent="grid/barriers" index="26" instance=ExtResource("2_52x6e")]
-position = Vector2(430, 355)
+position = Vector2(437, 356)
 
 [node name="barrier28" parent="grid/barriers" index="27" instance=ExtResource("2_52x6e")]
-position = Vector2(393, 377)
+position = Vector2(415, 393)
 rotation = 1.5708
 
 [node name="barrier29" parent="grid/barriers" index="28" instance=ExtResource("2_52x6e")]
-position = Vector2(429, 213)
+position = Vector2(436, 213)
 
 [node name="barrier30" parent="grid/barriers" index="29" instance=ExtResource("2_52x6e")]
-position = Vector2(512, 175)
+position = Vector2(519, 175)
 rotation = 1.5708
 
 [node name="brick2" parent="grid/bricks" index="0" instance=ExtResource("3_6hcv3")]

@@ -29,26 +29,33 @@ point_count = 3
 
 [node name="gameWindow" instance=ExtResource("1_a8dy6")]
 
-[node name="horizontal_moving_brick" parent="grid/bricks" index="0" instance=ExtResource("2_suqpk")]
+[node name="horizontal_moving_brick" parent="grid/bricks" index="0" groups=["bricks"] instance=ExtResource("2_suqpk")]
 position = Vector2(201, 79)
 rotation = 0.785398
 curve = SubResource("Curve2D_twhj5")
 is_hitable = true
+is_barrier = false
 
-[node name="horizontal_moving_brick2" parent="grid/bricks" index="1" instance=ExtResource("2_suqpk")]
+[node name="horizontal_moving_brick2" parent="grid/bricks" index="1" groups=["bricks"] instance=ExtResource("2_suqpk")]
 position = Vector2(332, 65)
 rotation = 2.35619
 curve = SubResource("Curve2D_lroar")
+is_hitable = true
+is_barrier = false
 
-[node name="horizontal_moving_brick3" parent="grid/bricks" index="2" instance=ExtResource("2_suqpk")]
+[node name="horizontal_moving_brick3" parent="grid/bricks" index="2" groups=["bricks"] instance=ExtResource("2_suqpk")]
 position = Vector2(60, 570)
 rotation = 2.35619
 curve = SubResource("Curve2D_hsnld")
+is_hitable = true
+is_barrier = false
 
-[node name="horizontal_moving_brick4" parent="grid/bricks" index="3" instance=ExtResource("2_suqpk")]
+[node name="horizontal_moving_brick4" parent="grid/bricks" index="3" groups=["bricks"] instance=ExtResource("2_suqpk")]
 position = Vector2(495, 573)
 rotation = 0.785398
 curve = SubResource("Curve2D_4nbrl")
+is_hitable = true
+is_barrier = false
 
 [node name="cannon" parent="." index="3"]
 position = Vector2(285, 600)

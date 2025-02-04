@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://v10uk0464o5e"]
+[gd_scene load_steps=9 format=3 uid="uid://v10uk0464o5e"]
 
 [ext_resource type="Script" path="res://Scripts/horizontal_moving_brick.gd" id="1_uunwx"]
+[ext_resource type="Script" path="res://Scripts/moving_brick.gd" id="2_0ogh1"]
 [ext_resource type="Texture2D" uid="uid://dowisosbke0l8" path="res://Assets/Sprites/Brick.png" id="2_8j6m4"]
 
 [sub_resource type="Animation" id="Animation_n36bh"]
@@ -81,9 +82,14 @@ libraries = {
 [node name="Brick" type="AnimatableBody2D" parent="."]
 position = Vector2(-2.08165e-12, -2.08165e-12)
 collision_mask = 2
+script = ExtResource("2_0ogh1")
 
 [node name="BrickSprite" type="Sprite2D" parent="Brick"]
 texture = ExtResource("2_8j6m4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Brick"]
 shape = SubResource("RectangleShape2D_xn8sr")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="Brick"]
+
+[connection signal="brick_destroyed" from="Brick" to="." method="_on_brick_brick_destroyed"]

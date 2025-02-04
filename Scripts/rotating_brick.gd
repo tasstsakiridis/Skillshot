@@ -11,6 +11,8 @@ extends AnimatableBody2D
 @onready var animationPlayer = $AnimationPlayer
 @onready var brickSprite = $BrickSprite
 
+@onready var sfxPlayer:AudioStreamPlayer = $SFXPlayer
+
 const BARRIER_TEXTURE = preload("res://assets/Sprites/Barrier.png")
 
 signal brick_destroyed
@@ -32,7 +34,11 @@ func _process(delta):
 
 func take_damage() -> void:
 	if is_hitable:
+		if GameManager.soundOn():
+			print("playing hit sound")
+			sfxPlayer.play()
+			
 		hit_points -= 1;
 		if hit_points <= 0:
+			#brick_destroyed.emit()
 			queue_free()
-			brick_destroyed.emit()

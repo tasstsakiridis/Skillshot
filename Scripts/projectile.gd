@@ -19,8 +19,16 @@ func _physics_process(delta):
 		velocity = velocity.bounce(normal) * 0.8
 		#print("projectile bounc velocity: " + str(velocity))
 	
-	if collision.get_collider().has_method("take_damage"):
+	var isBarrier = collision.get_collider().get("is_barrier")
+	if isBarrier == null:
+		isBarrier = false
+		
+	print("collider name: " + collision.get_collider().name)
+	print("isBarrier: " + str(isBarrier))
+	print("has method take_damage: " + str(collision.get_collider().has_method("take_damage")))
+	if !isBarrier && collision.get_collider().has_method("take_damage"):
 		velocity = velocity * 1.5
+		print("call take_damage")
 		collision.get_collider().take_damage()
 		
 	#if collision.get_collider().has_meta("is_bottom_wall") && !is_trajectory_projectile:

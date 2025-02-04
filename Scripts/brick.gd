@@ -17,11 +17,12 @@ signal brick_destroyed
 @onready var sfxPlayer:AudioStreamPlayer = $SFXPlayer
 
 func _ready():
-	$waitTimer.wait_time = wait_time
-	
-	if pulse:
-		$Timer.wait_time = pulse_time
-		$Timer.start(pulse_time)
+	if $waitTime != null:
+		$waitTimer.wait_time = wait_time
+		
+		if pulse:
+			$Timer.wait_time = pulse_time
+			$Timer.start(pulse_time)
 		
 func take_damage() -> void:
 	if GameManager.soundOn():

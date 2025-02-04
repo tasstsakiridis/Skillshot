@@ -11,20 +11,22 @@
 [node name="lasers" type="Node" parent="grid" index="4"]
 
 [node name="laser" parent="grid/lasers" index="0" instance=ExtResource("4_j0ov7")]
-position = Vector2(80, 649)
+position = Vector2(76, 649)
 rotation = 1.5708
+scale = Vector2(1, 1.48)
 pulse = true
 pulse_time = 2.0
 
 [node name="laserend" parent="grid/lasers" index="1" instance=ExtResource("5_gg7pd")]
-position = Vector2(36, 648)
+position = Vector2(28, 648)
 
 [node name="laserend2" parent="grid/lasers" index="2" instance=ExtResource("5_gg7pd")]
 position = Vector2(128, 648)
 
 [node name="laser2" parent="grid/lasers" index="3" instance=ExtResource("4_j0ov7")]
-position = Vector2(487, 313)
+position = Vector2(493, 313)
 rotation = 1.5708
+scale = Vector2(1, 1.36)
 pulse = true
 pulse_time = 2.0
 
@@ -32,7 +34,7 @@ pulse_time = 2.0
 position = Vector2(443, 312)
 
 [node name="laserend4" parent="grid/lasers" index="5" instance=ExtResource("5_gg7pd")]
-position = Vector2(535, 312)
+position = Vector2(542, 312)
 
 [node name="barriers" type="Node" parent="grid" index="5"]
 

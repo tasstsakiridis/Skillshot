@@ -27,7 +27,10 @@ func _on_continue_pressed():
 		sfxPlayer.play()
 		
 	GameManager.get_next_level()
-	get_tree().change_scene_to_file("res://Scenes/levels/level_"+str(GameManager.level)+".tscn")
+	if GameManager.level >= GameManager.MAX_LEVELS:
+		get_tree().change_scene_to_file("res://Scenes/game_finished.tscn")
+	else:
+		get_tree().change_scene_to_file("res://Scenes/levels/level_"+str(GameManager.level)+".tscn")
 
 func _on_try_again_pressed():
 	if GameManager.soundOn():

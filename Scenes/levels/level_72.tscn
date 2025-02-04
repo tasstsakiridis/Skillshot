@@ -18,15 +18,17 @@ point_count = 3
 
 [node name="gameWindow" instance=ExtResource("1_bdglx")]
 
-[node name="vertical_moving_brick" parent="grid/bricks" index="0" instance=ExtResource("2_3404j")]
+[node name="vertical_moving_brick" parent="grid/bricks" index="0" groups=["bricks"] instance=ExtResource("2_3404j")]
 position = Vector2(70, 310)
 curve = SubResource("Curve2D_ikhty")
 is_hitable = true
+is_barrier = false
 
-[node name="vertical_moving_brick2" parent="grid/bricks" index="1" instance=ExtResource("2_3404j")]
+[node name="vertical_moving_brick2" parent="grid/bricks" index="1" groups=["bricks"] instance=ExtResource("2_3404j")]
 position = Vector2(470, 610)
 curve = SubResource("Curve2D_eneun")
 is_hitable = true
+is_barrier = false
 
 [node name="barriers" type="Node" parent="grid" index="5"]
 
